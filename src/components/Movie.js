@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Movie.css';
 
-function Movie({title, year, summary, poster, genres}){
+function Movie({title, year, summary, poster, genres}){ //함수형 컴포넌트
     return (
         <div className="movie">
             <img src={poster}  alt={title} title={title}/>
@@ -15,7 +15,7 @@ function Movie({title, year, summary, poster, genres}){
                         return <li key={index} className="movie__genre">{genre}</li>;
                     })}
                 </ul>
-                <p className="movie__summary">{summary}</p>
+                <p className="movie__summary">{summary.slice(0, 180)}...</p> //slice 함수로 글자 수 제한
             </div>
         </div>
     );
